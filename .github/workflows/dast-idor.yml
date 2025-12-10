@@ -1,3 +1,5 @@
+#The original file was created from the "dast-zap.yml" but i chagned the working directory to target the idor folder
+#also verified and configured  the target url to port 3000 to match the IDOR app
 name: DAST - IDOR
 
 on:
