@@ -20,7 +20,7 @@ function resolveSafe(baseDir, userInput){
     try{
         userInput = decodeURIComponent(userInput);
     } catch(e){
-        // I'm just ignoring decode errors here since it's not critical
+        //  ignoring decode errors here since it's not critical
     }
     return path.resolve(baseDir, userInput);
 }
@@ -64,7 +64,7 @@ app.post(
 );
 
 
-// ------- UPDATED VERSION OF THE PREVIOUSLY VULNERABLE ROUTE --------
+
 app.post('/read-no-validate', (req,res)=>{
     const f = req.body.filename || "";
 
