@@ -1,5 +1,6 @@
 name: DAST - Auth Lab
-
+#was created from the dast-zap.yml workflwo file, the working directory was changed to fastbank-auth-lab'
+#Targeted port 3000
 on:
   workflow_dispatch:
 
