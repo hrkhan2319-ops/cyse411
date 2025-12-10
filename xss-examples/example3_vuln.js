@@ -3,11 +3,10 @@ const app = express();
 
 app.get('/search', (req, res) => {
   const q = req.query.q || '';
-  // FIXED: Returning JSON instead of HTML eliminates the XSS risk entirely.
-  res.json({ 
+  // I’m just returning JSON here so I don’t have to worry about escaping anything
+  res.json({
     results_for: q,
     message: "Search completed"
   });
 });
-
 module.exports = app;
