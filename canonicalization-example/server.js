@@ -22,7 +22,8 @@ function resolveSafe(baseDir, userInput){
     } catch(e){
         //  ignoring decode errors here since it's not critical
     }
-    return path.resolve(baseDir, userInput);
+    return path.resolve(baseDir, userInput.replace(/\.\./g, ''));
+
 }
 
 
