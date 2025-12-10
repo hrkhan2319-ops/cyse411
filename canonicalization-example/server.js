@@ -69,7 +69,7 @@ app.post('/read-no-validate', (req,res)=>{
     const f = req.body.filename || "";
 
     // switched this to resolve so I can see exactly where the path ends up
-    const full = path.resolve(BASE_DIR, f);
+    const full = resolveSafe(BASE_DIR, f);
 
     // I want to prevent leaving the files directory, so I check that the path still starts inside it
     const rel = path.relative(BASE_DIR, full);
