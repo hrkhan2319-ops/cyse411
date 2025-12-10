@@ -1,4 +1,5 @@
 // vulnerable: dangerouslySetInnerHTML
 function Comment({ html }) {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  // I removed dangerouslySetInnerHTML, this escapes special characters, preventing XSS.
+  return <div>{html}</div>
 }
