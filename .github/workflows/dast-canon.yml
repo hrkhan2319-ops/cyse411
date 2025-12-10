@@ -1,3 +1,5 @@
+#this file was also created form the dast-zap.yml workflow file but i changed the working directory to canonicalization-example 
+#The target url was changed to port 4000 because this specific lab server listents on port 400
 name: DAST - Canonicalization
 
 on:
