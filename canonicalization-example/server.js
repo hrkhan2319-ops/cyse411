@@ -72,8 +72,8 @@ app.post('/read-no-validate', (req,res)=>{
     const full = path.resolve(BASE_DIR, f);
 
     // I want to prevent leaving the files directory, so I check that the path still starts inside it
-    const baseNormalized = BASE_DIR + path.sep;
-    if(!full.startsWith(baseNormalized)){
+    const rel = path.relative(BASE_DIR, full);
+        if (rel.startsWith('..') || path.isAbsolute(rel)) {
         return res.status(403).json({
             error: "Access outside the files folder is not allowed",
             attempted: full
